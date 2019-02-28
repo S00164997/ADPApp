@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdProApp.Android", "AdProApp\AdProApp.Android\AdProApp.Android.csproj", "{231B038C-083D-4471-BCA7-5281FF68216C}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AdProApp", "AdProApp\AdProApp\AdProApp.shproj", "{4453875B-D05C-44DB-80A0-C65FDB3EDDA1}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		AdProApp\AdProApp\AdProApp.projitems*{231b038c-083d-4471-bca7-5281ff68216c}*SharedItemsImports = 4
+		AdProApp\AdProApp\AdProApp.projitems*{4453875b-d05c-44db-80a0-c65fdb3edda1}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{231B038C-083D-4471-BCA7-5281FF68216C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{231B038C-083D-4471-BCA7-5281FF68216C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{231B038C-083D-4471-BCA7-5281FF68216C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{231B038C-083D-4471-BCA7-5281FF68216C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{231B038C-083D-4471-BCA7-5281FF68216C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{231B038C-083D-4471-BCA7-5281FF68216C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37C0DBC9-F63F-4109-A8A3-04CE0E84E84E}
+	EndGlobalSection
+EndGlobal
