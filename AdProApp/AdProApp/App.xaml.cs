@@ -13,7 +13,7 @@ namespace AdProApp
 		{
 			InitializeComponent();
 
-			MainPage = new AdProApp.MainPage();
+            MainPage = new NavigationPage(new AdProApp.MainPage());
 		}
 
 		protected override void OnStart ()

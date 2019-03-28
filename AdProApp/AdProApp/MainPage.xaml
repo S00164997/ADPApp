@@ -3,9 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AdProApp"
              x:Class="AdProApp.MainPage">
-
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+    <StackLayout>
+	
+        <Label x:Name="xLocation" FontSize="Large"/>
+        <Label x:Name="xTemperature" FontSize="Large"/>
+        
+        <Button Text="Get Location" Clicked="GetLocAsync"/>
+        <Button Text="Check Time Around the world" Clicked="CheckTime"/>
+    </StackLayout>
 </ContentPage>
