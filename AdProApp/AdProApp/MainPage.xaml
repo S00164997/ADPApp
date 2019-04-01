@@ -10,5 +10,6 @@
         
         <Button Text="Get Location" Clicked="GetLocAsync"/>
         <Button Text="Check Time Around the world" Clicked="CheckTime"/>
+        <Button Text="Responsiveness" Clicked="Resp"/>
     </StackLayout>
 </ContentPage>

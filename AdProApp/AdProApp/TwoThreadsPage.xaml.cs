@@ -22,12 +22,13 @@ namespace AdProApp
         public static string NewY = "New York";
         public static string LA = "Los Angeles";
 
-        public string chosenLocation = "";
+        public string chosenLocation = "";//empty shared variable to make accessable to other methods
 
         public TwoThreadsPage ()
-		{
+		{//display previous thread time 
 			
             InitializeComponent();
+            // add static string to Picker Items for displaying
             Pick.Items.Add(choice.ToString());
             Pick.Items.Add(spain.ToString());
             Pick.Items.Add(china.ToString());
@@ -43,7 +44,7 @@ namespace AdProApp
 
             //Method call every time when picker selection changed.
             var selectedValue = Pick.Items[Pick.SelectedIndex];
-            chosenLocation = selectedValue;
+            chosenLocation = selectedValue;//shared variable
             if (Pick.SelectedIndex == 0)
             {
 
@@ -54,22 +55,13 @@ namespace AdProApp
                 stopWatch.Start();
                 // Thread.Sleep(10000);
                 // Creating and initializing new thread 
-                Thread thr = new Thread(mywork);
-                thr.Start();
-                
-                Time Tim = new Time();
-                DateTime a = await Tim.GetTime(chosenLocation.ToString());
-                string y = a.ToString();
-                y.ToString();
-                string expl = ("It is " + y.ToString() + " in local time");
+                Thread Timethread = new Thread(DoTime);
+                Timethread.Start();
 
-                xTime.Text = expl.ToString();
+                Thread Weatherthread = new Thread(DoWeather);
+                Weatherthread.Start();
 
-                WeatherMethods Wm = new WeatherMethods();
-                var b = await Wm.GetWeather(chosenLocation.ToString());
-                string c = b.ToString();
-                string expl2 = ("It is " + c.ToString() + "°C");
-                xTemperature.Text = expl2.ToString();
+
 
 
 
@@ -81,12 +73,32 @@ namespace AdProApp
                 string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                     ts.Hours, ts.Minutes, ts.Seconds,
                     ts.Milliseconds / 10);
-                string h = ("On One Thread it took : " + elapsedTime);
+                string h = ("On Two Thread's it took : " + elapsedTime);
                 xOneThread.Text = h.ToString();
             }
 
         }
 
-        
-    }
+        public async void DoTime()
+        {
+            Time Tim = new Time();
+            DateTime a = await Tim.GetTime(chosenLocation.ToString());
+            string y = a.ToString();
+            y.ToString();
+            string expl = ("It is " + y.ToString() + " in local time");
+
+            xTime.Text = expl.ToString();
+
+        }
+
+        public async void DoWeather()
+        {
+            WeatherMethods Wm = new WeatherMethods();
+            var b = await Wm.GetWeather(chosenLocation.ToString());
+            string c = b.ToString();
+            string expl2 = ("It is " + c.ToString() + "°C");
+            xTemperature.Text = expl2.ToString();
+        }
+
+        }
 }

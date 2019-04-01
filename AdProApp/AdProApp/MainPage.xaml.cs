@@ -56,5 +56,10 @@ namespace AdProApp
         {
             await Navigation.PushAsync(new WeatherTimePage());
         }
+
+        private async void Resp(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainThreadRespPage());
+        }
     }
 }
